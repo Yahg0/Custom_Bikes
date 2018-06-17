@@ -193,6 +193,7 @@
     <Compile Include="Controllers\ArosController.cs" />
     <Compile Include="Controllers\BancosController.cs" />
     <Compile Include="Controllers\BicicletasController.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -328,6 +329,11 @@
     <Content Include="Views\Bancos\Details.cshtml" />
     <Content Include="Views\Bancos\Edit.cshtml" />
     <Content Include="Views\Bancos\Index.cshtml" />
+    <Content Include="Views\Categorias\Create.cshtml" />
+    <Content Include="Views\Categorias\Delete.cshtml" />
+    <Content Include="Views\Categorias\Details.cshtml" />
+    <Content Include="Views\Categorias\Edit.cshtml" />
+    <Content Include="Views\Categorias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
