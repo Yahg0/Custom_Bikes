@@ -313,6 +313,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Bicicletas\Create.cshtml" />
     <Content Include="Views\Bicicletas\Details.cshtml" />
+    <Content Include="Views\Bicicletas\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
