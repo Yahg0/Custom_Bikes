@@ -198,6 +198,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PneusController.cs" />
+    <Compile Include="Controllers\QuadrosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -346,6 +347,11 @@
     <Content Include="Views\Pneus\Details.cshtml" />
     <Content Include="Views\Pneus\Edit.cshtml" />
     <Content Include="Views\Pneus\Index.cshtml" />
+    <Content Include="Views\Quadros\Create.cshtml" />
+    <Content Include="Views\Quadros\Delete.cshtml" />
+    <Content Include="Views\Quadros\Details.cshtml" />
+    <Content Include="Views\Quadros\Edit.cshtml" />
+    <Content Include="Views\Quadros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
