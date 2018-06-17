@@ -72,6 +72,48 @@ namespace CustomBikes.Controllers
 
         }
 
+        // ===============================================================
+        // Edição
+
+        // GET
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            MeuContexto contexto = new MeuContexto();
+
+            //Pesquisa no banco e retorna pra view
+            Bicicleta bici = contexto.Bicicletas.Find(id);
+
+            if (bici == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(bici);
+
+        }
+
+        //Edição
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Bicicleta bici)
+        {
+            if (ModelState.IsValid)
+            {
+                MeuContexto contexto = new MeuContexto();
+                contexto.Entry(bici).State = System.Data.Entity.EntityState.Modified;
+                contexto.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+
+            return View(bici);
+        }
+
 
     }
 }
