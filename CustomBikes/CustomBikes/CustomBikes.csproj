@@ -190,6 +190,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArosController.cs" />
     <Compile Include="Controllers\BicicletasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -316,6 +317,11 @@
     <Content Include="Views\Bicicletas\Edit.cshtml" />
     <Content Include="Views\Bicicletas\Delete.cshtml" />
     <Content Include="Views\Bicicletas\Index.cshtml" />
+    <Content Include="Views\Aros\Create.cshtml" />
+    <Content Include="Views\Aros\Delete.cshtml" />
+    <Content Include="Views\Aros\Details.cshtml" />
+    <Content Include="Views\Aros\Edit.cshtml" />
+    <Content Include="Views\Aros\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
