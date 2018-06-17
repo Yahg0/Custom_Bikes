@@ -314,6 +314,7 @@
     <Content Include="Views\Bicicletas\Create.cshtml" />
     <Content Include="Views\Bicicletas\Details.cshtml" />
     <Content Include="Views\Bicicletas\Edit.cshtml" />
+    <Content Include="Views\Bicicletas\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
