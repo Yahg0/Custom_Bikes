@@ -191,6 +191,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArosController.cs" />
+    <Compile Include="Controllers\BancosController.cs" />
     <Compile Include="Controllers\BicicletasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -322,6 +323,11 @@
     <Content Include="Views\Aros\Details.cshtml" />
     <Content Include="Views\Aros\Edit.cshtml" />
     <Content Include="Views\Aros\Index.cshtml" />
+    <Content Include="Views\Bancos\Create.cshtml" />
+    <Content Include="Views\Bancos\Delete.cshtml" />
+    <Content Include="Views\Bancos\Details.cshtml" />
+    <Content Include="Views\Bancos\Edit.cshtml" />
+    <Content Include="Views\Bancos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
