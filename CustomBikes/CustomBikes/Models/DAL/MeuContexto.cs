@@ -10,7 +10,7 @@ namespace CustomBikes.Models.DAL
     {
         public MeuContexto() : base("strConn")
         {
-
+            Database.SetInitializer<MeuContexto>(new DropCreateDatabaseIfModelChanges<MeuContexto>());
         }
 
     }
