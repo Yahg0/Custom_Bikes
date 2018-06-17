@@ -3,6 +3,7 @@ using CustomBikes.Models.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -45,5 +46,32 @@ namespace CustomBikes.Controllers
 
             return View(bicicleta);
         }
+
+        // ===============================================================
+        // Detalhes
+
+        // Get
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            MeuContexto contexto = new MeuContexto();
+
+            //Pesquisa no banco e retorna pra view
+            Bicicleta bici = contexto.Bicicletas.Find(id);
+
+            if (bici == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(bici);
+
+        }
+
+
     }
 }
