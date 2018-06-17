@@ -114,6 +114,45 @@ namespace CustomBikes.Controllers
             return View(bici);
         }
 
+        // ===============================================================
+        // Exclusão
+
+        //GET
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            MeuContexto contexto = new MeuContexto();
+
+            //Pesquisa no banco e retorna pra view
+            Bicicleta bici = contexto.Bicicletas.Find(id);
+
+            if (bici == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(bici);
+
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+
+            MeuContexto contexto = new MeuContexto();
+
+            Bicicleta bici = contexto.Bicicletas.Find(id);
+            contexto.Bicicletas.Remove(bici);
+            contexto.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
 
     }
 }
