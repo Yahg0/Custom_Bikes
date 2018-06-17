@@ -194,6 +194,7 @@
     <Compile Include="Controllers\BancosController.cs" />
     <Compile Include="Controllers\BicicletasController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\GuidoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -334,6 +335,11 @@
     <Content Include="Views\Categorias\Details.cshtml" />
     <Content Include="Views\Categorias\Edit.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Guidoes\Create.cshtml" />
+    <Content Include="Views\Guidoes\Delete.cshtml" />
+    <Content Include="Views\Guidoes\Details.cshtml" />
+    <Content Include="Views\Guidoes\Edit.cshtml" />
+    <Content Include="Views\Guidoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
