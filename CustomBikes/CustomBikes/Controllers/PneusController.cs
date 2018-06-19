@@ -15,67 +15,47 @@ namespace CustomBikes.Controllers
     {
         private MeuContexto db = new MeuContexto();
 
-        // GET: Pneus
+        // GET
         public ActionResult Index()
         {
-            // Conecta o banco
-            MeuContexto contexto = new MeuContexto();
-
-            List<Pneu> pneus = contexto.Pneus.ToList();
-            return View(pneus);
+            return View(db.Pneus.ToList());
         }
 
-
-        // GET: Pneus create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Pneus create
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Pneu pneu)
-        {
-            if (ModelState.IsValid)
-            {
-                MeuContexto contexto = new MeuContexto();
-                contexto.Pneus.Add(pneu);
-                contexto.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(pneu);
-        }
-
-        // ===============================================================
-        // Detalhes
-
-        // Get
+        // GET
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Pneu pn = contexto.Pneus.Find(id);
-
-            if (pn == null)
+            Pneu pneu = db.Pneus.Find(id);
+            if (pneu == null)
             {
                 return HttpNotFound();
             }
-
-            return View(pn);
-
+            return View(pneu);
         }
 
-        // ===============================================================
-        // Edição
+        // GET
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "PneuID,Nome,Preco")] Pneu pneu)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Pneus.Add(pneu);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(pneu);
+        }
 
         // GET
         public ActionResult Edit(int? id)
@@ -84,75 +64,61 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Pneu pn = contexto.Pneus.Find(id);
-
-            if (pn == null)
+            Pneu pneu = db.Pneus.Find(id);
+            if (pneu == null)
             {
                 return HttpNotFound();
             }
-
-            return View(pn);
-
+            return View(pneu);
         }
 
-        //Edição
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Pneu pn)
+        public ActionResult Edit([Bind(Include = "PneuID,Nome,Preco")] Pneu pneu)
         {
             if (ModelState.IsValid)
             {
-                MeuContexto contexto = new MeuContexto();
-                contexto.Entry(pn).State = System.Data.Entity.EntityState.Modified;
-                contexto.SaveChanges();
+                db.Entry(pneu).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
-
             }
-
-            return View(pn);
+            return View(pneu);
         }
 
-        // ===============================================================
-        // Exclusão
-
-        //GET
+        // GET
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Pneu pn = contexto.Pneus.Find(id);
-
-            if (pn == null)
+            Pneu pneu = db.Pneus.Find(id);
+            if (pneu == null)
             {
                 return HttpNotFound();
             }
-
-            return View(pn);
-
+            return View(pneu);
         }
 
+        // POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-
-            MeuContexto contexto = new MeuContexto();
-
-            Pneu pn = contexto.Pneus.Find(id);
-            contexto.Pneus.Remove(pn);
-            contexto.SaveChanges();
-
+            Pneu pneu = db.Pneus.Find(id);
+            db.Pneus.Remove(pneu);
+            db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

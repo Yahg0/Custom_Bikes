@@ -15,67 +15,47 @@ namespace CustomBikes.Controllers
     {
         private MeuContexto db = new MeuContexto();
 
-        // GET: Categorias
+        // GET
         public ActionResult Index()
         {
-            // Conecta o banco
-            MeuContexto contexto = new MeuContexto();
-
-            List<Categoria> categorias = contexto.Categorias.ToList();
-            return View(categorias);
+            return View(db.Categorias.ToList());
         }
 
-
-        // GET: Categorias create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Categorias create
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Categoria categoria)
-        {
-            if (ModelState.IsValid)
-            {
-                MeuContexto contexto = new MeuContexto();
-                contexto.Categorias.Add(categoria);
-                contexto.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(categoria);
-        }
-
-        // ===============================================================
-        // Detalhes
-
-        // Get
+        // GET
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Categoria cat = contexto.Categorias.Find(id);
-
-            if (cat == null)
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
             {
                 return HttpNotFound();
             }
-
-            return View(cat);
-
+            return View(categoria);
         }
 
-        // ===============================================================
-        // Edição
+        // GET
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "CategoriaID,Nome")] Categoria categoria)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Categorias.Add(categoria);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(categoria);
+        }
 
         // GET
         public ActionResult Edit(int? id)
@@ -84,75 +64,61 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Categoria cat = contexto.Categorias.Find(id);
-
-            if (cat == null)
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
             {
                 return HttpNotFound();
             }
-
-            return View(cat);
-
+            return View(categoria);
         }
 
-        //Edição
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Categoria cat)
+        public ActionResult Edit([Bind(Include = "CategoriaID,Nome")] Categoria categoria)
         {
             if (ModelState.IsValid)
             {
-                MeuContexto contexto = new MeuContexto();
-                contexto.Entry(cat).State = System.Data.Entity.EntityState.Modified;
-                contexto.SaveChanges();
+                db.Entry(categoria).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
-
             }
-
-            return View(cat);
+            return View(categoria);
         }
 
-        // ===============================================================
-        // Exclusão
-
-        //GET
+        // GET
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Categoria cat = contexto.Categorias.Find(id);
-
-            if (cat == null)
+            Categoria categoria = db.Categorias.Find(id);
+            if (categoria == null)
             {
                 return HttpNotFound();
             }
-
-            return View(cat);
-
+            return View(categoria);
         }
 
+        // POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-
-            MeuContexto contexto = new MeuContexto();
-
-            Categoria cat = contexto.Categorias.Find(id);
-            contexto.Categorias.Remove(cat);
-            contexto.SaveChanges();
-
+            Categoria categoria = db.Categorias.Find(id);
+            db.Categorias.Remove(categoria);
+            db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

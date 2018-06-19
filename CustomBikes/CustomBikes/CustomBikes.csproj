@@ -194,11 +194,11 @@
     <Compile Include="Controllers\BancosController.cs" />
     <Compile Include="Controllers\BicicletasController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
-    <Compile Include="Controllers\GuidoesController.cs" />
+    <Compile Include="Controllers\GuidaosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PneusController.cs" />
-    <Compile Include="Controllers\QuadrosController.cs" />
+    <Compile Include="Controllers\QuadroesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -317,11 +317,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Bicicletas\Create.cshtml" />
-    <Content Include="Views\Bicicletas\Details.cshtml" />
-    <Content Include="Views\Bicicletas\Edit.cshtml" />
-    <Content Include="Views\Bicicletas\Delete.cshtml" />
-    <Content Include="Views\Bicicletas\Index.cshtml" />
     <Content Include="Views\Aros\Create.cshtml" />
     <Content Include="Views\Aros\Delete.cshtml" />
     <Content Include="Views\Aros\Details.cshtml" />
@@ -337,21 +332,26 @@
     <Content Include="Views\Categorias\Details.cshtml" />
     <Content Include="Views\Categorias\Edit.cshtml" />
     <Content Include="Views\Categorias\Index.cshtml" />
-    <Content Include="Views\Guidoes\Create.cshtml" />
-    <Content Include="Views\Guidoes\Delete.cshtml" />
-    <Content Include="Views\Guidoes\Details.cshtml" />
-    <Content Include="Views\Guidoes\Edit.cshtml" />
-    <Content Include="Views\Guidoes\Index.cshtml" />
+    <Content Include="Views\Guidaos\Create.cshtml" />
+    <Content Include="Views\Guidaos\Delete.cshtml" />
+    <Content Include="Views\Guidaos\Details.cshtml" />
+    <Content Include="Views\Guidaos\Edit.cshtml" />
+    <Content Include="Views\Guidaos\Index.cshtml" />
     <Content Include="Views\Pneus\Create.cshtml" />
     <Content Include="Views\Pneus\Delete.cshtml" />
     <Content Include="Views\Pneus\Details.cshtml" />
     <Content Include="Views\Pneus\Edit.cshtml" />
     <Content Include="Views\Pneus\Index.cshtml" />
-    <Content Include="Views\Quadros\Create.cshtml" />
-    <Content Include="Views\Quadros\Delete.cshtml" />
-    <Content Include="Views\Quadros\Details.cshtml" />
-    <Content Include="Views\Quadros\Edit.cshtml" />
-    <Content Include="Views\Quadros\Index.cshtml" />
+    <Content Include="Views\Quadroes\Create.cshtml" />
+    <Content Include="Views\Quadroes\Delete.cshtml" />
+    <Content Include="Views\Quadroes\Details.cshtml" />
+    <Content Include="Views\Quadroes\Edit.cshtml" />
+    <Content Include="Views\Quadroes\Index.cshtml" />
+    <Content Include="Views\Bicicletas\Create.cshtml" />
+    <Content Include="Views\Bicicletas\Delete.cshtml" />
+    <Content Include="Views\Bicicletas\Details.cshtml" />
+    <Content Include="Views\Bicicletas\Edit.cshtml" />
+    <Content Include="Views\Bicicletas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

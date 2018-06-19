@@ -11,14 +11,14 @@ using CustomBikes.Models.DAL;
 
 namespace CustomBikes.Controllers
 {
-    public class BancosController : Controller
+    public class GuidaosController : Controller
     {
         private MeuContexto db = new MeuContexto();
 
-        // GET: Bancos
+        // GET
         public ActionResult Index()
         {
-            return View(db.Bancos.ToList());
+            return View(db.Guidoes.ToList());
         }
 
         // GET
@@ -28,12 +28,12 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Banco banco = db.Bancos.Find(id);
-            if (banco == null)
+            Guidao guidao = db.Guidoes.Find(id);
+            if (guidao == null)
             {
                 return HttpNotFound();
             }
-            return View(banco);
+            return View(guidao);
         }
 
         // GET
@@ -45,16 +45,16 @@ namespace CustomBikes.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BancoID,Nome,Preco")] Banco banco)
+        public ActionResult Create([Bind(Include = "GuidaoID,Nome,Preco")] Guidao guidao)
         {
             if (ModelState.IsValid)
             {
-                db.Bancos.Add(banco);
+                db.Guidoes.Add(guidao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(banco);
+            return View(guidao);
         }
 
         // GET
@@ -64,26 +64,26 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Banco banco = db.Bancos.Find(id);
-            if (banco == null)
+            Guidao guidao = db.Guidoes.Find(id);
+            if (guidao == null)
             {
                 return HttpNotFound();
             }
-            return View(banco);
+            return View(guidao);
         }
 
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BancoID,Nome,Preco")] Banco banco)
+        public ActionResult Edit([Bind(Include = "GuidaoID,Nome,Preco")] Guidao guidao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(banco).State = EntityState.Modified;
+                db.Entry(guidao).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(banco);
+            return View(guidao);
         }
 
         // GET
@@ -93,12 +93,12 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Banco banco = db.Bancos.Find(id);
-            if (banco == null)
+            Guidao guidao = db.Guidoes.Find(id);
+            if (guidao == null)
             {
                 return HttpNotFound();
             }
-            return View(banco);
+            return View(guidao);
         }
 
         // POST
@@ -106,8 +106,8 @@ namespace CustomBikes.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Banco banco = db.Bancos.Find(id);
-            db.Bancos.Remove(banco);
+            Guidao guidao = db.Guidoes.Find(id);
+            db.Guidoes.Remove(guidao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

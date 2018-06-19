@@ -18,64 +18,44 @@ namespace CustomBikes.Controllers
         // GET: Aros
         public ActionResult Index()
         {
-            // Conecta o banco
-            MeuContexto contexto = new MeuContexto();
-
-            List<Aro> aros = contexto.Aros.ToList();
-            return View(aros);
+            return View(db.Aros.ToList());
         }
 
-
-        // GET: Aros create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Aros create
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Aro aro)
-        {
-            if (ModelState.IsValid)
-            {
-                MeuContexto contexto = new MeuContexto();
-                contexto.Aros.Add(aro);
-                contexto.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(aro);
-        }
-
-        // ===============================================================
-        // Detalhes
-
-        // Get
+        // GET
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Aro ar = contexto.Aros.Find(id);
-
-            if (ar == null)
+            Aro aro = db.Aros.Find(id);
+            if (aro == null)
             {
                 return HttpNotFound();
             }
-
-            return View(ar);
-
+            return View(aro);
         }
 
-        // ===============================================================
-        // Edição
+        // GET
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "AroID,Nome,Preco")] Aro aro)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Aros.Add(aro);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(aro);
+        }
 
         // GET
         public ActionResult Edit(int? id)
@@ -84,75 +64,61 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Aro ar = contexto.Aros.Find(id);
-
-            if (ar == null)
+            Aro aro = db.Aros.Find(id);
+            if (aro == null)
             {
                 return HttpNotFound();
             }
-
-            return View(ar);
-
+            return View(aro);
         }
 
-        //Edição
+        // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Aro ar)
+        public ActionResult Edit([Bind(Include = "AroID,Nome,Preco")] Aro aro)
         {
             if (ModelState.IsValid)
             {
-                MeuContexto contexto = new MeuContexto();
-                contexto.Entry(ar).State = System.Data.Entity.EntityState.Modified;
-                contexto.SaveChanges();
+                db.Entry(aro).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
-
             }
-
-            return View(ar);
+            return View(aro);
         }
 
-        // ===============================================================
-        // Exclusão
-
-        //GET
+        // GET
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
-            MeuContexto contexto = new MeuContexto();
-
-            //Pesquisa no banco e retorna pra view
-            Aro ar = contexto.Aros.Find(id);
-
-            if (ar == null)
+            Aro aro = db.Aros.Find(id);
+            if (aro == null)
             {
                 return HttpNotFound();
             }
-
-            return View(ar);
-
+            return View(aro);
         }
 
+        // POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-
-            MeuContexto contexto = new MeuContexto();
-
-            Aro ar = contexto.Aros.Find(id);
-            contexto.Aros.Remove(ar);
-            contexto.SaveChanges();
-
+            Aro aro = db.Aros.Find(id);
+            db.Aros.Remove(aro);
+            db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

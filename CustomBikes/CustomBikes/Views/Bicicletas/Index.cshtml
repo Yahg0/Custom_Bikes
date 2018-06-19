@@ -12,6 +12,24 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model._Aro.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Banco.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Categoria.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Guidao.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Pneu.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model._Quadro.Nome)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Nome)
         </th>
         <th></th>
@@ -19,6 +37,24 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item._Aro.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Banco.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Categoria.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Guidao.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Pneu.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item._Quadro.Nome)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>

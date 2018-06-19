@@ -11,14 +11,14 @@ using CustomBikes.Models.DAL;
 
 namespace CustomBikes.Controllers
 {
-    public class BancosController : Controller
+    public class QuadroesController : Controller
     {
         private MeuContexto db = new MeuContexto();
 
-        // GET: Bancos
+        // GET
         public ActionResult Index()
         {
-            return View(db.Bancos.ToList());
+            return View(db.Quadros.ToList());
         }
 
         // GET
@@ -28,12 +28,12 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Banco banco = db.Bancos.Find(id);
-            if (banco == null)
+            Quadro quadro = db.Quadros.Find(id);
+            if (quadro == null)
             {
                 return HttpNotFound();
             }
-            return View(banco);
+            return View(quadro);
         }
 
         // GET
@@ -42,19 +42,19 @@ namespace CustomBikes.Controllers
             return View();
         }
 
-        // POST
+        // POST 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BancoID,Nome,Preco")] Banco banco)
+        public ActionResult Create([Bind(Include = "QuadroID,Nome,Preco")] Quadro quadro)
         {
             if (ModelState.IsValid)
             {
-                db.Bancos.Add(banco);
+                db.Quadros.Add(quadro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(banco);
+            return View(quadro);
         }
 
         // GET
@@ -64,26 +64,26 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Banco banco = db.Bancos.Find(id);
-            if (banco == null)
+            Quadro quadro = db.Quadros.Find(id);
+            if (quadro == null)
             {
                 return HttpNotFound();
             }
-            return View(banco);
+            return View(quadro);
         }
 
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BancoID,Nome,Preco")] Banco banco)
+        public ActionResult Edit([Bind(Include = "QuadroID,Nome,Preco")] Quadro quadro)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(banco).State = EntityState.Modified;
+                db.Entry(quadro).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(banco);
+            return View(quadro);
         }
 
         // GET
@@ -93,12 +93,12 @@ namespace CustomBikes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Banco banco = db.Bancos.Find(id);
-            if (banco == null)
+            Quadro quadro = db.Quadros.Find(id);
+            if (quadro == null)
             {
                 return HttpNotFound();
             }
-            return View(banco);
+            return View(quadro);
         }
 
         // POST
@@ -106,8 +106,8 @@ namespace CustomBikes.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Banco banco = db.Bancos.Find(id);
-            db.Bancos.Remove(banco);
+            Quadro quadro = db.Quadros.Find(id);
+            db.Quadros.Remove(quadro);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
