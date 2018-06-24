@@ -5,15 +5,14 @@
     background-size: cover;
 }
 
-
 .body-content {
     padding-left: 0px !important;
     padding-right: 0px !important;
 }
 
-#quadrados {
+#Cards {
     height: 550px;
-    padding-top: 125px;
+    padding-top: 85px;
 }
 
 .servicos {
@@ -48,10 +47,10 @@
     left: 50%;
 }
 
-#btnCategorias{
+.btn.btn-primary {
     color: white;
-    background-color: black;
-    
+    background-color: #854442;
+    border-color: #854442;
 }
 
 .rodape{
@@ -73,3 +72,25 @@
     transition: .5s ease;
     backface-visibility: hidden;
 }
+
+.corMarrom {
+    background-color: #3C2F2F;
+}
+
+.textoBranco {
+    color: #FFF4E6;
+}
+
+.card {
+    background-color: #f3f4f7 !important;
+}
+
+.titulosDosQuadrados {
+    padding-top: 20px;
+}
+
+.textoDosQuadrados{
+    padding: 25px;
+
+}
+
