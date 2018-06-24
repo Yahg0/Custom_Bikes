@@ -1,5 +1,5 @@
 ﻿.carousel-item {
-    height: 25vh !important;
+    height: 50vh !important;
     min-height: 300px;
     background: no-repeat center center scroll;
     background-size: cover;
@@ -9,4 +9,52 @@
 .body-content {
     padding-left: 0px !important;
     padding-right: 0px !important;
+}
+
+#quadrados {
+    height: 550px;
+    padding-top: 125px;
+}
+
+.servicos {
+    margin-top: 25px;
+    padding: 75px;
+    background-color: #CFCFCF;
+    height: 550px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+.portifolio {
+    margin-top: 25px;
+    
+    height: 550px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+.empresa {
+    margin-top: 25px;
+    padding: 100px;
+    background-color: #CFCFCF;
+    height: 550px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
+#btnCategorias{
+    color: white;
+    background-color: black;
+    
+}
+
+.rodape{
+    padding-top: 35px;
+    text-align: center;
 }
