@@ -230,6 +230,30 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imagens\Bikes\1444336598231-1ngptems8cqqg-630-354.jpg" />
+    <Content Include="Imagens\Bikes\1923-Arrow-Racer.jpg" />
+    <Content Include="Imagens\Bikes\5018592216_f35b0bc543_o.jpg" />
+    <Content Include="Imagens\Bikes\5975051371_efd9307993_b.jpg" />
+    <Content Include="Imagens\Bikes\9c02ea9948d0ac2cb2a7123696276c21.jpg" />
+    <Content Include="Imagens\Bikes\alta resolucao\3MI6v065dhbB7kavvfZkKL8L_kF3mtfXBFzwW47sweU.jpg" />
+    <Content Include="Imagens\Bikes\alta resolucao\Colnago_Master1_web.jpg" />
+    <Content Include="Imagens\Bikes\alta resolucao\maxresdefault.jpg" />
+    <Content Include="Imagens\Bikes\alta resolucao\MKHkaRC.jpg" />
+    <Content Include="Imagens\Bikes\alta resolucao\Moodys_CrownJewel_1.jpg" />
+    <Content Include="Imagens\Bikes\alta resolucao\zgSbopw.jpg" />
+    <Content Include="Imagens\Bikes\Donhou Signature Steel.jpg" />
+    <Content Include="Imagens\Bikes\IMG_20151221_183612.jpg" />
+    <Content Include="Imagens\Bikes\IMG_4619.jpg" />
+    <Content Include="Imagens\Bikes\Omelenchuk-road-bike.jpg" />
+    <Content Include="Imagens\Bikes\parts\1444336598274-14rsp2q0xxgd7-630-354.jpg" />
+    <Content Include="Imagens\Bikes\parts\1444336598278-duguh6ydylek-630-354.jpg" />
+    <Content Include="Imagens\Bikes\parts\1444336598282-14nxane9a6ffh-630-354.jpg" />
+    <Content Include="Imagens\Bikes\PB200115-1.jpg" />
+    <Content Include="Imagens\Bikes\Squadra_build-16-768x480.jpg" />
+    <Content Include="Imagens\Bikes\static1.squarespace.com.jpg" />
+    <Content Include="Imagens\Bikes\static1.squarespace.com1.jpg" />
+    <Content Include="Imagens\Bikes\uni1.jpg" />
+    <Content Include="Imagens\Bikes\What_You_Ride-_Vintage_Steel_Road_Bikes-4_1024x1024.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
