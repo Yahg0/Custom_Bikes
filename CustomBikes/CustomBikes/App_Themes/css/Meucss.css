@@ -1,5 +1,5 @@
 ﻿.carousel-item {
-    height: 50vh !important;
+    height: 80vh !important;
     min-height: 300px;
     background: no-repeat center center scroll;
     background-size: cover;
@@ -49,6 +49,7 @@
 
 .btn.btn-primary {
     color: white;
+    background-image: url('file:///C:\Users\Yahgo\Desktop\bike.png');
     background-color: #854442;
     border-color: #854442;
 }
@@ -94,3 +95,14 @@
 
 }
 
+.card-img-top{
+    
+    height: 200px;
+    width: 200px;
+}
+
+
+/*Cor dos links da navbar superior*/
+nav.navbar li a {
+    color: white;
+}

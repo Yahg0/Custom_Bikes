@@ -230,17 +230,19 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Imagens\Bikes\1444336598231-1ngptems8cqqg-630-354.jpg" />
     <Content Include="Imagens\Bikes\1923-Arrow-Racer.jpg" />
     <Content Include="Imagens\Bikes\5018592216_f35b0bc543_o.jpg" />
     <Content Include="Imagens\Bikes\5975051371_efd9307993_b.jpg" />
     <Content Include="Imagens\Bikes\9c02ea9948d0ac2cb2a7123696276c21.jpg" />
-    <Content Include="Imagens\Bikes\alta resolucao\3MI6v065dhbB7kavvfZkKL8L_kF3mtfXBFzwW47sweU.jpg" />
-    <Content Include="Imagens\Bikes\alta resolucao\Colnago_Master1_web.jpg" />
-    <Content Include="Imagens\Bikes\alta resolucao\maxresdefault.jpg" />
-    <Content Include="Imagens\Bikes\alta resolucao\MKHkaRC.jpg" />
-    <Content Include="Imagens\Bikes\alta resolucao\Moodys_CrownJewel_1.jpg" />
-    <Content Include="Imagens\Bikes\alta resolucao\zgSbopw.jpg" />
+    <Content Include="Imagens\Bikes\altaResolucao\fullhd1.jpg" />
+    <Content Include="Imagens\Bikes\altaResolucao\fullhd2.jpg" />
+    <Content Include="Imagens\Bikes\altaResolucao\fullhd3.jpg" />
+    <Content Include="Imagens\Bikes\altaResolucao\maxresdefault.jpg" />
+    <Content Include="Imagens\Bikes\altaResolucao\MKHkaRC.jpg" />
+    <Content Include="Imagens\Bikes\altaResolucao\zgSbopw.jpg" />
+    <Content Include="Imagens\Bikes\categorias\casual.jpg" />
+    <Content Include="Imagens\Bikes\categorias\montain.jpg" />
+    <Content Include="Imagens\Bikes\categorias\speed.png" />
     <Content Include="Imagens\Bikes\Donhou Signature Steel.jpg" />
     <Content Include="Imagens\Bikes\IMG_20151221_183612.jpg" />
     <Content Include="Imagens\Bikes\IMG_4619.jpg" />
