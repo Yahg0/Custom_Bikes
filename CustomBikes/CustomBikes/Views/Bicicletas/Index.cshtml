@@ -1,76 +1,90 @@
 ﻿@model IEnumerable<CustomBikes.Models.Bicicleta>
 
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Meus Pedidos";
 }
 
-<h2>Index</h2>
+<div class="tituloPedidos text-center col-lg-12">
+    <h2>Meus Pedidos</h2>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @*@Html.DisplayNameFor(model => model._Aro.Nome)*@
-            @Html.DisplayName("Aro")
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model._Banco.Nome)*@
-            @Html.DisplayName("Banco")
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model._Categoria.Nome)*@
-            @Html.DisplayName("Categoria")
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model._Guidao.Nome)*@
-            @Html.DisplayName("Guidão")
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model._Pneu.Nome)*@
-            @Html.DisplayName("Pneu")
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model._Quadro.Nome)*@
-            @Html.DisplayName("Quadro")
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.Nome)*@
-            @Html.DisplayName("Nome da bike")
-        </th>
-        <th></th>
-    </tr>
+<hr />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item._Aro.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._Banco.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._Categoria.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._Guidao.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._Pneu.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item._Quadro.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.BicicletaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.BicicletaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.BicicletaID })
-        </td>
-    </tr>
-}
+@*Listagem de bikes do pedido*@
 
-</table>
+<center>
+    <table class="table tabelaPedidos">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Aro.Nome)*@
+                @Html.DisplayName("Aro")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Banco.Nome)*@
+                @Html.DisplayName("Banco")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Categoria.Nome)*@
+                @Html.DisplayName("Categoria")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Guidao.Nome)*@
+                @Html.DisplayName("Guidão")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Pneu.Nome)*@
+                @Html.DisplayName("Pneu")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Quadro.Nome)*@
+                @Html.DisplayName("Quadro")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Nome)*@
+                @Html.DisplayName("Nome da bike")
+            </th>
+            <th>
+                <p>Gerenciar pedido</p>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Aro.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Banco.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Categoria.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Guidao.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Pneu.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Quadro.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <button class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.BicicletaID })</button>
+                    <button class="btn btn-primary">@Html.ActionLink("Excluir", "Delete", new { id = item.BicicletaID })</button>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</center>
+
+@*Fim da listagem de bikes do pedido*@
+
+

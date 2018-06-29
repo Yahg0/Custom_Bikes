@@ -28,7 +28,6 @@
 
 .portifolio {
     margin-top: 25px;
-    
     height: 550px;
     width: 100vw;
     position: relative;
@@ -106,3 +105,21 @@
 nav.navbar li a {
     color: white;
 }
+
+.tabelaPedidos{ 
+    width: 900px !important;
+}
+
+.modal-dialog {
+    height: 100% !important;
+
+}
+
+.tituloPedidos{
+    padding-top: 25px;
+}
+
+a {
+    color: white !important;
+}
+
