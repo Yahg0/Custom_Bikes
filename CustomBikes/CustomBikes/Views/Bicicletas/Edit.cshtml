@@ -2,9 +2,11 @@
 
 @{
     ViewBag.Title = "Edit";
+
 }
 
-<br /><center><h2>r pedido</h2></center>
+
+<br /><center><h2>Meus Pedidos</h2></center>
 
 <hr />
 
@@ -13,11 +15,8 @@
 {
     @Html.AntiForgeryToken()
 
-    <!-- Botão para abrir a modal edição -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdicao">Editar pedido</button>
-
     <!-- Corpo Modal Edição -->
-    <div class="modal fade" id="modalEdicao" tabindex="-1" role="dialog" aria-labelledby="modalEdicaoLabel" aria-hidden="true">
+    <div class="modal focus modal-open" id="modalEdicao" tabindex="-1" role="dialog" aria-labelledby="modalEdicaoLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -93,7 +92,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button class="btn btn-primary">@Html.ActionLink("Voltar", "Index")</button>
                     <input type="submit" value="Salvar edição" class="btn btn-primary" />
                 </div>
             </div>
@@ -104,10 +103,17 @@
 
 <br />
 
+
+
 <div>
-    <button class="btn btn-primary">@Html.ActionLink("Voltar", "Index")</button>
+   
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    $(function () {
+        $('#modalEdicao').modal('show');
+    });
+</script>
 }
