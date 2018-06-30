@@ -4,77 +4,112 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<br /><center><h2>Meus Pedidos</h2></center>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Bicicleta</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model._Aro.Nome)
-        </dt>
+<hr />
 
-        <dd>
-            @Html.DisplayFor(model => model._Aro.Nome)
-        </dd>
+@*Model confirmar exclusão*@
+<div class="modal fade" id="modalExclusao" tabindex="-1" role="dialog" aria-labelledby="modalExclusaoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalExclusaoLabel">Criação do pedido</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3>Are you sure you want to delete this?</h3>
+                <div>
+                    <h4>Bicicleta</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model._Aro.Nome)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model._Banco.Nome)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model._Aro.Nome)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model._Banco.Nome)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model._Banco.Nome)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model._Categoria.Nome)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model._Banco.Nome)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model._Categoria.Nome)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model._Categoria.Nome)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model._Guidao.Nome)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model._Categoria.Nome)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model._Guidao.Nome)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model._Guidao.Nome)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model._Pneu.Nome)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model._Guidao.Nome)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model._Pneu.Nome)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model._Pneu.Nome)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model._Quadro.Nome)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model._Pneu.Nome)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model._Quadro.Nome)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model._Quadro.Nome)
+                        </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model._Quadro.Nome)
+                        </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </dt>
 
-    </dl>
+                        <dd>
+                            @Html.DisplayFor(model => model.Nome)
+                        </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+                    </dl>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="Delete" class="btn btn-default" />
+                            @Html.ActionLink("Back to List", "Index")
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+            </div>
         </div>
-    }
+    </div>
 </div>
+@*Fim Modal confirmar exclusão*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(function () {
+            $('#modalExclusao').modal('show');
+        });
+    </script>
+}
+
+
