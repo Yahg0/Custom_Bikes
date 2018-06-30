@@ -134,6 +134,11 @@ nav.navbar li a {
     padding-top: 25px;
 }
 
+.botaoPedidos {
+    margin-top: 25px;
+    
+}
+
 a {
     color: white !important;
 }
