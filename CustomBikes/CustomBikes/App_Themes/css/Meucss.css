@@ -1,4 +1,24 @@
-﻿.carousel-item {
+﻿html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+.footer,
+.push {
+    height: 50px;
+}
+
+
+.content {
+    flex: 1 !important;
+}
+
+.carousel-item {
     height: 80vh !important;
     min-height: 300px;
     background: no-repeat center center scroll;
@@ -51,11 +71,6 @@
     background-image: url('file:///C:\Users\Yahgo\Desktop\bike.png');
     background-color: #854442;
     border-color: #854442;
-}
-
-.rodape{
-    padding-top: 35px;
-    text-align: center;
 }
 
 /*Altera velocidade da troca de opacidade nas imagens de catalogo*/

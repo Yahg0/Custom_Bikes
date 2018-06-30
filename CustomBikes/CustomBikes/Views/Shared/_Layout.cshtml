@@ -11,44 +11,46 @@
 
 </head>
 <body style="background-color:#dbdce0 !important">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background-color:#3C2F2F">
-        <div class="container">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            @Html.ActionLink("Custom Bikes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item col-md-auto">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="nav-item col-md-auto">@Html.ActionLink("Produtos", "About", "Home")</li>
-                    <li class="nav-item col-md-auto">@Html.ActionLink("Monte sua bike", "Create", "Bicicletas")</li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <div class="body-content" style="background-color: #dbdce0">
-        @RenderBody()
-
-        <div class="rodape">
+    <div class="wrapper">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark fixed-top" style="background-color:#3C2F2F">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <p>&copy; @DateTime.Now.Year - CustomBikes</p>
-                    </div>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                @Html.ActionLink("Custom Bikes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item col-md-auto">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-item col-md-auto">@Html.ActionLink("Produtos", "About", "Home")</li>
+                        <li class="nav-item col-md-auto">@Html.ActionLink("Monte sua bike", "Create", "Bicicletas")</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="body-content" style="background-color: #dbdce0">
+            @RenderBody()
+
+            @*<hr />
+                <footer class="fixed-bottom">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>*@
+            <div class="push"></div>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p>&copy; @DateTime.Now.Year - CustomBikes</p>
                 </div>
             </div>
         </div>
-
-
-        @*<hr />
-        <footer class="fixed-bottom">
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>*@
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    </footer>
 </body>
 </html>
