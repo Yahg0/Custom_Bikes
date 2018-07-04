@@ -122,7 +122,7 @@ nav.navbar li a {
 }
 
 .tabelaPedidos{ 
-    width: 900px !important;
+    width: 920px !important;
 }
 
 .modal-dialog {
@@ -141,5 +141,10 @@ nav.navbar li a {
 
 a {
     color: white !important;
+}
+
+.preco{
+    font-size: 11px;
+
 }
 

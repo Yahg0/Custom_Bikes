@@ -377,7 +377,8 @@
     <Content Include="Views\Bicicletas\Details.cshtml" />
     <Content Include="Views\Bicicletas\Edit.cshtml" />
     <Content Include="Views\Bicicletas\Index.cshtml" />
-    <Content Include="Views\Home\Sobre.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\formulario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -24,16 +24,20 @@
     <table class="table tabelaPedidos">
         <tr>
             <th>
+                @*@Html.DisplayNameFor(model => model.Nome)*@
+                @Html.DisplayName("Nome da bike")
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model._Categoria.Nome)*@
+                @Html.DisplayName("Categoria")
+            </th>
+            <th>
                 @*@Html.DisplayNameFor(model => model._Aro.Nome)*@
                 @Html.DisplayName("Aro")
             </th>
             <th>
                 @*@Html.DisplayNameFor(model => model._Banco.Nome)*@
                 @Html.DisplayName("Banco")
-            </th>
-            <th>
-                @*@Html.DisplayNameFor(model => model._Categoria.Nome)*@
-                @Html.DisplayName("Categoria")
             </th>
             <th>
                 @*@Html.DisplayNameFor(model => model._Guidao.Nome)*@
@@ -48,8 +52,8 @@
                 @Html.DisplayName("Quadro")
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Nome)*@
-                @Html.DisplayName("Nome da bike")
+                @*@Html.DisplayNameFor(model => model._Quadro.Nome)*@
+                @Html.DisplayName("Total")
             </th>
             <th>
                 <p>Gerenciar pedido</p>
@@ -58,34 +62,43 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item._Aro.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item._Banco.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item._Categoria.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item._Guidao.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item._Pneu.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item._Quadro.Nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
-                </td>
-                <td>
-                    <button class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.BicicletaID })</button>
-                    <button class="btn btn-primary">@Html.ActionLink("Excluir", "Delete", new { id = item.BicicletaID })</button>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._Categoria.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._Aro.Nome)
+                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Aro.Preco)</p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._Banco.Nome)
+                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Banco.Preco)</p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._Guidao.Nome)
+                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Guidao.Preco)</p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._Pneu.Nome)
+                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Pneu.Preco)</p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item._Quadro.Nome)
+                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Quadro.Preco)</p>
+            </td>
 
-                </td>
-            </tr>
+            <td>
+                <p>R$ @total,00</p>
+            </td>
+            <td>
+                <button class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.BicicletaID })</button>
+                <button class="btn btn-primary">@Html.ActionLink("Excluir", "Delete", new { id = item.BicicletaID })</button>
+
+            </td>
+        </tr>
         }
 
     </table>
