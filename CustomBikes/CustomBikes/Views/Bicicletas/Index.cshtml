@@ -62,43 +62,45 @@
 
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item._Categoria.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item._Aro.Nome)
-                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Aro.Preco)</p>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item._Banco.Nome)
-                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Banco.Preco)</p>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item._Guidao.Nome)
-                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Guidao.Preco)</p>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item._Pneu.Nome)
-                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Pneu.Preco)</p>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item._Quadro.Nome)
-                <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Quadro.Preco)</p>
-            </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Categoria.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Aro.Nome)
+                    <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Aro.Preco)</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Banco.Nome)
+                    <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Banco.Preco)</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Guidao.Nome)
+                    <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Guidao.Preco)</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Pneu.Nome)
+                    <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Pneu.Preco)</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Quadro.Nome)
+                    <p class="alert-success preco">R$@Html.DisplayFor(modelItem => item._Quadro.Preco)</p>
+                </td>
+                @{
+                    var total = item._Aro.Preco + item._Banco.Preco + item._Guidao.Preco + item._Pneu.Preco + item._Quadro.Preco;
+                }
+                <td>
+                    <p>R$ @total,00</p>
+                </td>
+                <td>
+                    <button class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.BicicletaID })</button>
+                    <button class="btn btn-primary">@Html.ActionLink("Excluir", "Delete", new { id = item.BicicletaID })</button>
 
-            <td>
-                <p>R$ @total,00</p>
-            </td>
-            <td>
-                <button class="btn btn-primary">@Html.ActionLink("Editar", "Edit", new { id = item.BicicletaID })</button>
-                <button class="btn btn-primary">@Html.ActionLink("Excluir", "Delete", new { id = item.BicicletaID })</button>
-
-            </td>
-        </tr>
+                </td>
+            </tr>
         }
 
     </table>
