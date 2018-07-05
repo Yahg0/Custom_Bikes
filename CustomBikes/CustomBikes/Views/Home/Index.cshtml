@@ -173,7 +173,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <section class="text-white Sobre" id="Sobre">
+                <section class="text-white scroll" id="Sobre">
                     <h2 class="text-center text-uppercase text-white" style="margin-top: -35px; padding-bottom: 25px;">Sobre</h2>
                     <div class="row">
                         <div class="col-lg-4 ml-auto">
@@ -199,6 +199,17 @@
     </div>
 </div>
 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 800);
+            });
+        });
+    </script>
+}
 
 
 
